@@ -26,6 +26,7 @@ namespace WerewolfClient
         private string _myRole;
         private bool _isDead;
         private List<Player> players = null;
+        private Form _loginform;
         public MainForm()
         {
             InitializeComponent();
@@ -44,6 +45,11 @@ namespace WerewolfClient
             EnableButton(BtnVote, false);
             _myRole = null;
             _isDead = false;
+        }
+
+        public void addLogin(Form Login)
+        {
+            _loginform = Login;
         }
 
         private void OnTimerEvent(object sender, EventArgs e)
@@ -267,6 +273,13 @@ namespace WerewolfClient
                             _isDead = false;
                         }
                         break;
+                    case EventEnum.SignOut:
+                        if (wm.EventPayloads["Success"] == WerewolfModel.TRUE)
+                        {
+                            _loginform.Visible = true;
+                            this.Visible = false;
+                        }
+                        break;
                     case EventEnum.ChatMessage:
                         if (wm.EventPayloads["Success"] == WerewolfModel.TRUE)
                         {
@@ -293,6 +306,7 @@ namespace WerewolfClient
                             }
                         }
                         break;
+                   
                 }
                 // need to reset event
                 wm.Event = EventEnum.NOP;
@@ -303,7 +317,13 @@ namespace WerewolfClient
         {
             controller = (WerewolfController)c;
         }
-
+        private void BtnSignOut_Click(object sender, EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = WerewolfCommand.CommandEnum.SignOut;
+            wcmd.Payloads = new Dictionary<string, string>() { { "Server", "http://project-ile.net:2342/werewolf/" } };
+            controller.ActionPerformed(wcmd);
+        }
         private void BtnJoin_Click(object sender, EventArgs e)
         {
             WerewolfCommand wcmd = new WerewolfCommand();

@@ -32,6 +32,8 @@ namespace WerewolfClient
                         {
                             _mainForm.Visible = true;
                             this.Visible = false;
+                            TbLogin.Text = "";
+                            TbPassword.Text = "";
                         }
                         else
                         {
