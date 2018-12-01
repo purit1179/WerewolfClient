@@ -68,6 +68,8 @@
             // 
             // GBPlayers
             // 
+            this.GBPlayers.BackColor = System.Drawing.Color.SlateGray;
+            this.GBPlayers.BackgroundImage = global::WerewolfClient.Properties.Resources.Irithyll_of_the_Boreal_Valley___11;
             this.GBPlayers.Controls.Add(this.BtnPlayer15);
             this.GBPlayers.Controls.Add(this.BtnPlayer14);
             this.GBPlayers.Controls.Add(this.BtnPlayer13);
@@ -288,7 +290,7 @@
             // 
             // BtnPlayer0
             // 
-            this.BtnPlayer0.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer0.Image")));
+            this.BtnPlayer0.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer0.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer0.Location = new System.Drawing.Point(15, 19);
             this.BtnPlayer0.Name = "BtnPlayer0";
@@ -301,6 +303,7 @@
             // 
             // GBChat
             // 
+            this.GBChat.BackgroundImage = global::WerewolfClient.Properties.Resources.Irithyll_of_the_Boreal_Valley___11;
             this.GBChat.Controls.Add(this.TbChatInput);
             this.GBChat.Controls.Add(this.TbChatBox);
             this.GBChat.Location = new System.Drawing.Point(413, 12);
@@ -321,6 +324,7 @@
             // 
             // TbChatBox
             // 
+            this.TbChatBox.BackColor = System.Drawing.Color.DarkGray;
             this.TbChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbChatBox.Location = new System.Drawing.Point(15, 19);
             this.TbChatBox.Multiline = true;
@@ -331,6 +335,7 @@
             // 
             // GBAction
             // 
+            this.GBAction.BackgroundImage = global::WerewolfClient.Properties.Resources.Irithyll_of_the_Boreal_Valley___11;
             this.GBAction.Controls.Add(this.BtnJoin);
             this.GBAction.Controls.Add(this.BtnAction);
             this.GBAction.Controls.Add(this.BtnVote);
@@ -343,36 +348,40 @@
             // 
             // BtnJoin
             // 
+            this.BtnJoin.BackColor = System.Drawing.Color.DimGray;
             this.BtnJoin.Location = new System.Drawing.Point(180, 19);
             this.BtnJoin.Name = "BtnJoin";
             this.BtnJoin.Size = new System.Drawing.Size(75, 46);
             this.BtnJoin.TabIndex = 9;
             this.BtnJoin.Text = "Join Game";
-            this.BtnJoin.UseVisualStyleBackColor = true;
+            this.BtnJoin.UseVisualStyleBackColor = false;
             this.BtnJoin.Click += new System.EventHandler(this.BtnJoin_Click);
             // 
             // BtnAction
             // 
+            this.BtnAction.BackColor = System.Drawing.Color.DimGray;
             this.BtnAction.Location = new System.Drawing.Point(99, 19);
             this.BtnAction.Name = "BtnAction";
             this.BtnAction.Size = new System.Drawing.Size(75, 46);
             this.BtnAction.TabIndex = 1;
             this.BtnAction.Text = "Action";
-            this.BtnAction.UseVisualStyleBackColor = true;
+            this.BtnAction.UseVisualStyleBackColor = false;
             this.BtnAction.Click += new System.EventHandler(this.BtnAction_Click);
             // 
             // BtnVote
             // 
+            this.BtnVote.BackColor = System.Drawing.Color.DimGray;
             this.BtnVote.Location = new System.Drawing.Point(18, 19);
             this.BtnVote.Name = "BtnVote";
             this.BtnVote.Size = new System.Drawing.Size(75, 46);
             this.BtnVote.TabIndex = 0;
             this.BtnVote.Text = "Vote";
-            this.BtnVote.UseVisualStyleBackColor = true;
+            this.BtnVote.UseVisualStyleBackColor = false;
             this.BtnVote.Click += new System.EventHandler(this.BtnVote_Click);
             // 
             // GBStatus
             // 
+            this.GBStatus.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.GBStatus.Controls.Add(this.LBTime);
             this.GBStatus.Controls.Add(this.LBDay);
             this.GBStatus.Controls.Add(this.LBPeriod);
@@ -432,18 +441,20 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Location = new System.Drawing.Point(300, 473);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "Sign out";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.BtnSignOut_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::WerewolfClient.Properties.Resources.Irithyll_of_the_Boreal_Valley___11;
             this.ClientSize = new System.Drawing.Size(800, 508);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.GBStatus);
