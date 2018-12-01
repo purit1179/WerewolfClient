@@ -14,6 +14,7 @@ namespace WerewolfClient
     {
         private WerewolfController controller;
         private Form _mainForm;
+        private string NameServer;
         public Login(Form MainForm)
         {
             InitializeComponent();
@@ -63,7 +64,8 @@ namespace WerewolfClient
         {
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = WerewolfCommand.CommandEnum.SignIn;
-            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", TBServer.Text } };
+            SetServer();
+            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text }, { "Password", TbPassword.Text }, { "Server", NameServer } };
             controller.ActionPerformed(wcmd);
         }
 
@@ -71,13 +73,30 @@ namespace WerewolfClient
         {
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = WerewolfCommand.CommandEnum.SignUp;
-            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text}, { "Password",TbPassword.Text}, { "Server", TBServer.Text } };
+            SetServer();
+            wcmd.Payloads = new Dictionary<string, string>() { { "Login", TbLogin.Text}, { "Password",TbPassword.Text}, { "Server", NameServer } };
             controller.ActionPerformed(wcmd);
         }
 
         public string GetServer()
         {
             return TBServer.Text;
+        }
+
+        private void SetServer()
+        {
+            switch(TBServer.Text)
+            {
+                case "2 Players":
+                    NameServer = "http://project-ile.net:2342/werewolf/";
+                    break;
+                case "4 Players":
+                    NameServer = "http://project-ile.net:2344/werewolf/";
+                    break;
+                case "16 Players":
+                    NameServer = "http://project-ile.net:23416/werewolf/";
+                    break;
+            }
         }
     }
 }

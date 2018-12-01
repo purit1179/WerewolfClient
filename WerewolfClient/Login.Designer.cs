@@ -36,7 +36,7 @@
             this.BtnSignUp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TBServer = new System.Windows.Forms.TextBox();
+            this.TBServer = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,12 +126,15 @@
             // 
             // TBServer
             // 
-            this.TBServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBServer.Location = new System.Drawing.Point(132, 115);
+            this.TBServer.FormattingEnabled = true;
+            this.TBServer.Items.AddRange(new object[] {
+            "2 Players",
+            "4 Players",
+            "16 Players"});
+            this.TBServer.Location = new System.Drawing.Point(132, 121);
             this.TBServer.Name = "TBServer";
-            this.TBServer.Size = new System.Drawing.Size(273, 29);
+            this.TBServer.Size = new System.Drawing.Size(273, 21);
             this.TBServer.TabIndex = 8;
-            this.TBServer.Text = " http://project-ile.net:2342/werewolf/";
             // 
             // Login
             // 
@@ -168,6 +171,6 @@
         private System.Windows.Forms.Button BtnSignUp;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TBServer;
+        private System.Windows.Forms.ComboBox TBServer;
     }
 }
