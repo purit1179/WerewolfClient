@@ -319,9 +319,10 @@ namespace WerewolfClient
         }
         private void BtnSignOut_Click(object sender, EventArgs e)
         {
+            Login getServer = (Login)_loginform;
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = WerewolfCommand.CommandEnum.SignOut;
-            wcmd.Payloads = new Dictionary<string, string>() { { "Server", "http://project-ile.net:2342/werewolf/" } };
+            wcmd.Payloads = new Dictionary<string, string>() { { "Server", getServer.GetServer() } };
             controller.ActionPerformed(wcmd);
         }
         private void BtnJoin_Click(object sender, EventArgs e)
