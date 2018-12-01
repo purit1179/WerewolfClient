@@ -80,7 +80,7 @@ namespace WerewolfClient
 
         public string GetServer()
         {
-            return TBServer.Text;
+            return NameServer;
         }
 
         private void SetServer()
