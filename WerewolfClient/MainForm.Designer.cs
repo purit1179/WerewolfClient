@@ -95,7 +95,7 @@
             // 
             // BtnPlayer15
             // 
-            this.BtnPlayer15.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer15.Image")));
+            this.BtnPlayer15.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer15.Location = new System.Drawing.Point(278, 282);
             this.BtnPlayer15.Name = "BtnPlayer15";
@@ -108,7 +108,7 @@
             // 
             // BtnPlayer14
             // 
-            this.BtnPlayer14.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer14.Image")));
+            this.BtnPlayer14.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer14.Location = new System.Drawing.Point(190, 282);
             this.BtnPlayer14.Name = "BtnPlayer14";
@@ -121,7 +121,7 @@
             // 
             // BtnPlayer13
             // 
-            this.BtnPlayer13.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer13.Image")));
+            this.BtnPlayer13.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer13.Location = new System.Drawing.Point(102, 282);
             this.BtnPlayer13.Name = "BtnPlayer13";
@@ -134,7 +134,7 @@
             // 
             // BtnPlayer12
             // 
-            this.BtnPlayer12.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer12.Image")));
+            this.BtnPlayer12.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer12.Location = new System.Drawing.Point(15, 282);
             this.BtnPlayer12.Name = "BtnPlayer12";
@@ -147,7 +147,7 @@
             // 
             // BtnPlayer11
             // 
-            this.BtnPlayer11.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer11.Image")));
+            this.BtnPlayer11.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer11.Location = new System.Drawing.Point(278, 194);
             this.BtnPlayer11.Name = "BtnPlayer11";
@@ -160,7 +160,7 @@
             // 
             // BtnPlayer10
             // 
-            this.BtnPlayer10.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer10.Image")));
+            this.BtnPlayer10.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer10.Location = new System.Drawing.Point(190, 194);
             this.BtnPlayer10.Name = "BtnPlayer10";
@@ -173,7 +173,7 @@
             // 
             // BtnPlayer9
             // 
-            this.BtnPlayer9.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer9.Image")));
+            this.BtnPlayer9.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer9.Location = new System.Drawing.Point(102, 194);
             this.BtnPlayer9.Name = "BtnPlayer9";
@@ -186,7 +186,7 @@
             // 
             // BtnPlayer8
             // 
-            this.BtnPlayer8.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer8.Image")));
+            this.BtnPlayer8.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer8.Location = new System.Drawing.Point(15, 194);
             this.BtnPlayer8.Name = "BtnPlayer8";
@@ -199,7 +199,7 @@
             // 
             // BtnPlayer7
             // 
-            this.BtnPlayer7.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer7.Image")));
+            this.BtnPlayer7.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer7.Location = new System.Drawing.Point(278, 106);
             this.BtnPlayer7.Name = "BtnPlayer7";
@@ -212,7 +212,7 @@
             // 
             // BtnPlayer6
             // 
-            this.BtnPlayer6.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer6.Image")));
+            this.BtnPlayer6.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer6.Location = new System.Drawing.Point(190, 106);
             this.BtnPlayer6.Name = "BtnPlayer6";
@@ -225,7 +225,7 @@
             // 
             // BtnPlayer5
             // 
-            this.BtnPlayer5.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer5.Image")));
+            this.BtnPlayer5.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer5.Location = new System.Drawing.Point(102, 106);
             this.BtnPlayer5.Name = "BtnPlayer5";
@@ -238,7 +238,7 @@
             // 
             // BtnPlayer4
             // 
-            this.BtnPlayer4.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer4.Image")));
+            this.BtnPlayer4.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer4.Location = new System.Drawing.Point(15, 106);
             this.BtnPlayer4.Name = "BtnPlayer4";
@@ -251,7 +251,7 @@
             // 
             // BtnPlayer3
             // 
-            this.BtnPlayer3.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer3.Image")));
+            this.BtnPlayer3.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer3.Location = new System.Drawing.Point(278, 19);
             this.BtnPlayer3.Name = "BtnPlayer3";
@@ -264,7 +264,7 @@
             // 
             // BtnPlayer2
             // 
-            this.BtnPlayer2.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer2.Image")));
+            this.BtnPlayer2.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer2.Location = new System.Drawing.Point(190, 19);
             this.BtnPlayer2.Name = "BtnPlayer2";
@@ -277,7 +277,7 @@
             // 
             // BtnPlayer1
             // 
-            this.BtnPlayer1.Image = ((System.Drawing.Image)(resources.GetObject("BtnPlayer1.Image")));
+            this.BtnPlayer1.Image = global::WerewolfClient.Properties.Resources.Icon_villager;
             this.BtnPlayer1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnPlayer1.Location = new System.Drawing.Point(102, 19);
             this.BtnPlayer1.Name = "BtnPlayer1";
