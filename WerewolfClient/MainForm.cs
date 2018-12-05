@@ -60,22 +60,16 @@ namespace WerewolfClient
             controller.ActionPerformed(wcmd);
         }
 
-        public void ShowRole(List<Role> r)
+        public void ShowID(Game g)
         {
-            if(r != null)
+            if(g.Period.Value== Game.PeriodEnum.Night)
             {
-                foreach (Role tmp in r)
-                {
-                    if (tmp != null)
-                    {
-                        TbRole.AppendText(tmp.Name + Environment.NewLine);
-                    }                
-                }
+                TbRole.AppendText("Now is Night." + Environment.NewLine);
             }
             else
             {
-                TbRole.AppendText("No players");
-            }   
+                TbRole.AppendText("Now is Day." + Environment.NewLine);
+            }                           
         }
 
         public void AddChatMessage(string str)
@@ -190,6 +184,7 @@ namespace WerewolfClient
                         _updateTimer.Enabled = false;
                         break;
                     case EventEnum.GameStarted:
+                        ShowID(wm.GetID());
                         players = wm.Players;
                         _myRole = wm.EventPayloads["Player.Role.Name"];
                         AddChatMessage("Your role is " + _myRole + ".");
@@ -232,25 +227,19 @@ namespace WerewolfClient
                                 EnableButton(BtnAction, false);
                                 break;
                         }
-                        if (wm.GetRole() == null)
-                        {
-
-                        }
-                        else
-                        {
-                            ShowRole(wm.GetRole());
-                        }
                         EnableButton(BtnVote, true);
                         EnableButton(BtnLeaveGame, true);
                         EnableButton(BtnJoin, false);
                         UpdateAvatar(wm);
                         break;
                     case EventEnum.SwitchToDayTime:
+                        ShowID(wm.GetID());
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Day;
                         LBPeriod.Text = "Day time of";
                         break;
                     case EventEnum.SwitchToNightTime:
+                        ShowID(wm.GetID());
                         AddChatMessage("Switch to night time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
                         _currentPeriod = Game.PeriodEnum.Night;
                         LBPeriod.Text = "Night time of";
@@ -343,7 +332,6 @@ namespace WerewolfClient
                             EnableButton(BtnLeaveGame, false);
                             EnableButton(BtnAction, false);
                             EnableButton(BtnJoin, true);
-                            UpdateAvatar(wm);
                         }                      
                         break;
                 }

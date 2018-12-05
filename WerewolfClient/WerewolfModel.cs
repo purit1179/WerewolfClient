@@ -146,6 +146,12 @@ namespace WerewolfClient
                 Console.WriteLine(p);
                 _event = EventEnum.SignOut;
                 _eventPayloads["Success"] = TRUE;
+                if (_isPlaying)
+                {
+                    _isPlaying = false;
+                    _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
+                    Console.WriteLine(_game);
+                }
             }
             catch (Exception ex)
             {
@@ -528,19 +534,12 @@ namespace WerewolfClient
             _eventPayloads.Clear();
         }
 
-        public List<Role> GetRole()
+        public Game GetID()
         {
-            List<Role> r = new List<Role>();
-            List<Player> p = _playerEP.FindPlayersByGame(_game.Id.ToString());
-            if (_isPlaying)
-            {      
-                foreach(Player tmp in p)
-                {
-                    r.Add(tmp.Role);                
-                }
-                return r;
-            }
-            return null;
+            List<Role> r = new List<Role>();       
+            Game g = _gameEP.GameSessionSessionIDGet(_player.Session);
+            Console.WriteLine(g);
+            return g;
         }
     }
 }

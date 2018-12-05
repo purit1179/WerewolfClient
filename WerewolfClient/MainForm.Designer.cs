@@ -503,12 +503,13 @@
             // 
             // TbRole
             // 
-            this.TbRole.Location = new System.Drawing.Point(20, 22);
+            this.TbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.TbRole.Location = new System.Drawing.Point(20, 23);
             this.TbRole.Multiline = true;
             this.TbRole.Name = "TbRole";
             this.TbRole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TbRole.Size = new System.Drawing.Size(471, 210);
-            this.TbRole.TabIndex = 0;
+            this.TbRole.Size = new System.Drawing.Size(471, 209);
+            this.TbRole.TabIndex = 2;
             // 
             // MainForm
             // 
