@@ -74,7 +74,7 @@ namespace WerewolfClient
             }
             else
             {
-                TbRole.AppendText("Null");
+                TbRole.AppendText("No players");
             }   
         }
 

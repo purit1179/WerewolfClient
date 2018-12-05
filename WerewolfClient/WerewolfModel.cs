@@ -142,16 +142,7 @@ namespace WerewolfClient
         {
             try
             {
-                InitilizeModel(server);
                 List<Player> p = _playerEP.LogoutPlayer(_player.Session);
-                if (_isPlaying)
-                {
-                    Console.WriteLine("Now playing");
-                }
-                else
-                {
-                    Console.WriteLine("Not playing");
-                }
                 Console.WriteLine(p);
                 _event = EventEnum.SignOut;
                 _eventPayloads["Success"] = TRUE;
@@ -169,10 +160,8 @@ namespace WerewolfClient
         public void LeaveGame()
         {
             if (_isPlaying)
-            {
-                
+            {              
                 _isPlaying = false;
-                _game.Id = null;
                 _event = EventEnum.LeaveGame;
                 _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
                 _eventPayloads["Success"] = TRUE;
@@ -444,7 +433,7 @@ namespace WerewolfClient
                 _player = playerEP.AddPlayer(p);
 
                 Console.WriteLine(_player.Id);
-                _event = EventEnum.SignIn;
+                _event = EventEnum.SignUp;
                 _eventPayloads["Success"] = TRUE;
             } catch (Exception ex)
             {
