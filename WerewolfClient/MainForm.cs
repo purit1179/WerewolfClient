@@ -43,6 +43,7 @@ namespace WerewolfClient
             EnableButton(BtnJoin, true);
             EnableButton(BtnAction, false);
             EnableButton(BtnVote, false);
+            EnableButton(BtnLeaveGame, false);
             _myRole = null;
             _isDead = false;
         }
@@ -57,6 +58,24 @@ namespace WerewolfClient
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = CommandEnum.RequestUpdate;
             controller.ActionPerformed(wcmd);
+        }
+
+        public void ShowRole(List<Role> r)
+        {
+            if(r != null)
+            {
+                foreach (Role tmp in r)
+                {
+                    if (tmp != null)
+                    {
+                        TbRole.AppendText(tmp.Name + Environment.NewLine);
+                    }                
+                }
+            }
+            else
+            {
+                TbRole.AppendText("Null");
+            }   
         }
 
         public void AddChatMessage(string str)
@@ -148,8 +167,8 @@ namespace WerewolfClient
         public void Notify(Model m)
         {
             if (m is WerewolfModel)
-            {
-                WerewolfModel wm = (WerewolfModel)m;
+            {            
+                WerewolfModel wm = (WerewolfModel)m;          
                 switch (wm.Event)
                 {
                     case EventEnum.JoinGame:
@@ -213,7 +232,16 @@ namespace WerewolfClient
                                 EnableButton(BtnAction, false);
                                 break;
                         }
+                        if (wm.GetRole() == null)
+                        {
+
+                        }
+                        else
+                        {
+                            ShowRole(wm.GetRole());
+                        }
                         EnableButton(BtnVote, true);
+                        EnableButton(BtnLeaveGame, true);
                         EnableButton(BtnJoin, false);
                         UpdateAvatar(wm);
                         break;
@@ -306,7 +334,18 @@ namespace WerewolfClient
                             }
                         }
                         break;
-                   
+                    case EventEnum.LeaveGame:
+                        if(wm.EventPayloads["Success"] == WerewolfModel.TRUE)
+                        {
+                            AddChatMessage("You leave game.");
+                            _updateTimer.Enabled = false;
+                            EnableButton(BtnVote, false);
+                            EnableButton(BtnLeaveGame, false);
+                            EnableButton(BtnAction, false);
+                            EnableButton(BtnJoin, true);
+                            UpdateAvatar(wm);
+                        }                      
+                        break;
                 }
                 // need to reset event
                 wm.Event = EventEnum.NOP;
@@ -325,10 +364,18 @@ namespace WerewolfClient
             wcmd.Payloads = new Dictionary<string, string>() { { "Server", getServer.GetServer() } };
             controller.ActionPerformed(wcmd);
         }
+
         private void BtnJoin_Click(object sender, EventArgs e)
         {
             WerewolfCommand wcmd = new WerewolfCommand();
             wcmd.Action = CommandEnum.JoinGame;
+            controller.ActionPerformed(wcmd);
+        }
+
+        private void BtnLeaveGame_Click(object sender,EventArgs e)
+        {
+            WerewolfCommand wcmd = new WerewolfCommand();
+            wcmd.Action = CommandEnum.LeaveGame;
             controller.ActionPerformed(wcmd);
         }
 

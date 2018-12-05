@@ -59,6 +59,7 @@ namespace WerewolfClient
             Chat = 16,
             ChatMessage = 17,
             SignOut = 50,
+            LeaveGame = 60,
         }
         public const string ROLE_SEER = "Seer";
         public const string ROLE_AURA_SEER = "Aura Seer";
@@ -143,6 +144,14 @@ namespace WerewolfClient
             {
                 InitilizeModel(server);
                 List<Player> p = _playerEP.LogoutPlayer(_player.Session);
+                if (_isPlaying)
+                {
+                    Console.WriteLine("Now playing");
+                }
+                else
+                {
+                    Console.WriteLine("Not playing");
+                }
                 Console.WriteLine(p);
                 _event = EventEnum.SignOut;
                 _eventPayloads["Success"] = TRUE;
@@ -153,6 +162,26 @@ namespace WerewolfClient
                 _event = EventEnum.SignOut;
                 _eventPayloads["Success"] = FALSE;
                 _eventPayloads["Error"] = ex.ToString();
+            }
+            NotifyAll();
+        }
+
+        public void LeaveGame()
+        {
+            if (_isPlaying)
+            {
+                
+                _isPlaying = false;
+                _game.Id = null;
+                _event = EventEnum.LeaveGame;
+                _game = _gameEP.GameSessionSessionIDDelete(_player.Session);
+                _eventPayloads["Success"] = TRUE;
+                Console.WriteLine(_game);
+            }
+            else
+            {
+                _eventPayloads["Success"] = FALSE;
+                Console.WriteLine("Not playing");
             }
             NotifyAll();
         }
@@ -508,6 +537,21 @@ namespace WerewolfClient
             //reset event
             _event = EventEnum.NOP;
             _eventPayloads.Clear();
+        }
+
+        public List<Role> GetRole()
+        {
+            List<Role> r = new List<Role>();
+            List<Player> p = _game.Players;
+            if (_isPlaying)
+            {      
+                foreach(Player tmp in p)
+                {
+                    r.Add(tmp.Role);                
+                }
+                return r;
+            }
+            return null;
         }
     }
 }

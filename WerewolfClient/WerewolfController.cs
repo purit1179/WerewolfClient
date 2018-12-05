@@ -76,6 +76,9 @@ namespace WerewolfClient
                         case WerewolfCommand.CommandEnum.Chat:
                             wm.Chat(cmd.Payloads["Message"]);
                             break;
+                        case WerewolfCommand.CommandEnum.LeaveGame:
+                            wm.LeaveGame();
+                            break;
                     }
                 }
             }

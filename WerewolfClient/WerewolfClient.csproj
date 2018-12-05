@@ -118,6 +118,7 @@
     <Content Include="Resources\Icon_werewolf.png" />
     <Content Include="Resources\Icon_wolf_seer.png" />
     <Content Include="Resources\Icon_wolf_shaman.png" />
+    <None Include="Resources\photo-1530482817083-29ae4b92ff15.jpg" />
     <None Include="Resources\Irithyll_of_the_Boreal_Valley_-_11.jpg" />
     <None Include="Resources\wolf.png" />
   </ItemGroup>
