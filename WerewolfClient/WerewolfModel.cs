@@ -542,7 +542,7 @@ namespace WerewolfClient
         public List<Role> GetRole()
         {
             List<Role> r = new List<Role>();
-            List<Player> p = _game.Players;
+            List<Player> p = _playerEP.FindPlayersByGame(_game.Id.ToString());
             if (_isPlaying)
             {      
                 foreach(Player tmp in p)
